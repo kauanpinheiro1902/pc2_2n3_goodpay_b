@@ -25,6 +25,14 @@ async function intializeLogin() {
 }
 
 async function loadUserStorage() {
-    const loadUser = JSON.parse(loadUserStorage.getItem('usuarioAtual'))
-    
+    const loadUser = JSON.parse(localStorage.getItem('usuarioAtual'))
+    console.log(loadUser.email)
+    if (loadUser.photoUrl != "") {
+        document.getElementById("load-img").innerHTML = `<img src="${loadUser.photoUrl}" alt="${loadUser.name}" class="img-fluid rounded-start" width="100%">`
+    } else {
+        document.getElementById("load-img").innerHTML = `<img src="./assets/logo_claro.png" alt="Logo Padrão" class="img-fluid rounded-start" width="100%">`
+    }
+    document.getElementById("load-nome").innerText = loadUser.name
+    document.getElementById("load-email").innerText = loadUser.email
+    document.getElementById("load-data").innerText = new Date(Date.now()).toLocaleDateString('pt-BR')
 }
