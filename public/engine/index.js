@@ -35,4 +35,30 @@ async function loadUserStorage() {
     document.getElementById("load-nome").innerText = loadUser.name
     document.getElementById("load-email").innerText = loadUser.email
     document.getElementById("load-data").innerText = new Date(Date.now()).toLocaleDateString('pt-BR')
+
+    let extrato = `<ol class="list-group list-group-numbered">`
+    extrato += `<li class="list-group-item d-flex justify-content-between align-items-start">`
+    extrato += `<div class="ms-2 me-auto">`
+    extrato += `<div class="fw-bold">Subheading</div>`
+    extrato += `Content for list item`
+    extrato += `</div>`
+    extrato += `<span class="badge text-bg-primary rounded-pill">14</span>`
+    extrato += `</li>`
+    extrato += `<li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Subheading</div>
+      Content for list item
+    </div>
+    <span class="badge text-bg-primary rounded-pill">14</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Subheading</div>
+      Content for list item
+    </div>
+    <span class="badge text-bg-primary rounded-pill">14</span>
+  </li>
+</ol>`
+    document.getElementById("login-extrato").innerHTML = extrato
+    document.getElementById("load-extrato").innerHTML = extrato
 }
